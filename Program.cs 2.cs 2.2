@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Kata
+{
+    public class CountUniqueElements
+    {
+        public static int CountUniqueElementsInList(List<int> numbers)
+        {
+            if (numbers.Count == 0)
+            {
+                return 0;
+            }
+
+            Dictionary<int, bool> uniqueElements = new Dictionary<int, bool>();
+
+            foreach (int number in numbers)
+            {
+                if (!uniqueElements.ContainsKey(number))
+                {
+                    uniqueElements.Add(number, true);
+                }
+            }
+            return uniqueElements.Count;
+        }
+    }
+}
+internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
